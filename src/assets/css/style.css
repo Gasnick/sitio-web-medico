@@ -1,0 +1,532 @@
+@import url('./reset.css');
+@import url('./variables.css');
+
+body {
+  font-family: var(--font-main);
+  background: var(--dodger-50);
+  color: var(--dodger-950);
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--dodger-100);
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header img {
+  height: 40px;
+}
+
+/* Botón hamburguesa */
+.menu-toggle {
+  display: block;
+  font-size: 3.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0 auto;
+  /* 🔹 centrado horizontal */
+}
+
+.nav button {
+  margin-left: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--dodger-500);
+  color: white;
+}
+
+.nav button:hover {
+  background: var(--dodger-600);
+}
+
+/* Navbar */
+.navbar {
+  background: var(--dodger-200);
+  display: none;
+  position: sticky;
+  /* se pega arriba */
+  top: 0;
+  z-index: 1000;
+  /* queda sobre el contenido */
+  transition: box-shadow 0.3s ease;
+}
+
+/* Pequeña sombra cuando el usuario hace scroll */
+.navbar.scrolled {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.navbar.show {
+  display: block;
+}
+
+.navbar ul {
+  list-style: none;
+  flex-direction: column;
+  /* mobile-first */
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--dodger-950);
+  font-weight: bold;
+  display: block;
+  padding: 0.5rem;
+}
+
+/* Ajuste para header en mobile */
+@media (max-width: 767px) {
+  .header {
+    flex-direction: column;
+    /* 🔹 logo arriba, hamburguesa abajo */
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .logo h1 {
+    font-size: 1.2rem;
+    /* opcional: más compacto */
+  }
+}
+
+/* Estilos en pantallas grandes */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+    /* ocultar hamburguesa */
+  }
+
+  .navbar {
+    display: block;
+  }
+
+  .navbar ul {
+    display: flex;
+    /* 🔹 falta esto */
+    flex-direction: row;
+    /* ya lo tenías */
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+    /* más limpio en desktop */
+  }
+
+  .navbar a {
+    padding: 0.5rem 0;
+    /* un poco de aire vertical */
+  }
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--dodger-50);
+}
+
+/* Sección QUIENES SOMOS */
+.quienes-somos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 1rem;
+  background: #f9f9f9;
+}
+
+.tarjeta {
+  width: 100%;
+  max-width: 600px;
+  /* límite en pantallas grandes */
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+}
+
+.tarjeta h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #1e76f2;
+  /* dodger-blue 600 */
+}
+
+.tarjeta p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+
+/* ================== ESPECIALIDADES ================== */
+.especialidades {
+  padding: 4rem 1.5rem;
+  background-color: var(--dodger-50);
+  text-align: center;
+}
+
+.especialidades h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--dodger-800);
+}
+
+.especialidades-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  /* mobile */
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card-especialidad {
+  background: white;
+  border: 1px solid var(--dodger-200);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-especialidad ul {
+  list-style: none;
+  /* sin puntitos */
+  padding: 0;
+  margin: 0;
+}
+
+.card-especialidad li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-especialidad li::before {
+  content: "⚕️";
+  /* símbolo médico neutral */
+  font-size: 1rem;
+  color: var(--dodger-600);
+  /* azul */
+}
+
+.card-especialidad:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-especialidad h3 {
+  font-size: 1.4rem;
+  color: var(--dodger-700);
+  margin-bottom: 0.5rem;
+}
+
+.card-especialidad p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--dodger-900);
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .especialidades-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .especialidades-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ================== OBRAS SOCIALES ================== */
+.obras-sociales {
+  padding: 40px 20px;
+  background-color: #eef8ff;
+  /* un azul muy suave */
+  text-align: center;
+}
+
+.obras-sociales h2 {
+  color: #1e76f2;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.obras-sociales-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 por fila */
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.obra-social {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 30px 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  /* como un espacio reservado para logo */
+}
+
+.obra-social p {
+  margin: 0;
+  font-weight: bold;
+  color: #194db4;
+}
+
+@media (max-width: 768px) {
+  .obras-sociales-grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* en tablets y móviles, 2 columnas */
+  }
+}
+
+@media (max-width: 480px) {
+  .obras-sociales-grid {
+    grid-template-columns: 1fr;
+    /* en móviles muy chicos, 1 columna */
+  }
+}
+
+/* WhatsApp turnos */
+.turnos-wsp {
+  padding: 2rem 1rem;
+  text-align: center;
+  background: var(--dodger-100);
+}
+
+.btn-wsp {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: #25d366;
+  /* color oficial de WhatsApp */
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-wsp:hover {
+  background: #20ba57;
+}
+
+/* Formulario turnos */
+#turnos {
+  padding: 2rem 1rem;
+  background-color: #f9f9f9;
+}
+
+.turnos-contenedor {
+  display: flex;
+  flex-direction: column;
+  /* mobile-first: en columna */
+  gap: 2rem;
+}
+
+.turnos-form,
+.turnos-wsp {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.turnos-form h3 {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.turnos-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.turnos-form input,
+.turnos-form select {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.btn-enviar {
+  background-color: var(--dodger-600);
+  color: #fff;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-enviar:hover {
+  background-color: var(--dodger-700);
+}
+
+.btn-wsp {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #25d366;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.btn-wsp:hover {
+  background-color: #1ebe5d;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--dodger-900);
+  color: white;
+  font-size: 0.9rem;
+}
+
+#ubicacion-contacto {
+  padding: 2rem 1rem;
+  background-color: #eef8ff;
+}
+
+#ubicacion-contacto h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--dodger-blue-700);
+}
+
+.contacto-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contacto-info {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.contacto-info p {
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contacto-info .icon {
+  font-size: 1.3rem;
+}
+
+.contacto-mapa iframe {
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .navbar ul {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .profesionales {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .form-turnos {
+    width: 65%;
+  }
+}
+
+/* Desktop: lado a lado */
+@media (min-width: 992px) {
+  .turnos-contenedor {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .turnos-form {
+    flex: 2;
+    /* el formulario ocupa más espacio */
+  }
+
+  .turnos-wsp {
+    flex: 1;
+    /* WhatsApp más compacto */
+  }
+
+  .contacto-grid {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .contacto-info {
+    flex: 1;
+  }
+
+  .contacto-mapa {
+    flex: 1;
+  }
+}
+
+/* Botón flotante volver arriba */
+#btn-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+  /* oculto por defecto */
+  z-index: 1000;
+  transition: background 0.3s;
+}
+
+#btn-top:hover {
+  background: var(--dodger-700);
+}

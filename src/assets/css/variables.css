@@ -1,0 +1,15 @@
+:root {
+  --dodger-50: #eef8ff;
+  --dodger-100: #daeeff;
+  --dodger-200: #bde2ff;
+  --dodger-300: #8fd1ff;
+  --dodger-400: #5ab5ff;
+  --dodger-500: #3f9bfd;
+  --dodger-600: #1e76f2;
+  --dodger-700: #1660df;
+  --dodger-800: #194db4;
+  --dodger-900: #1a448e;
+  --dodger-950: #152b56;
+
+  --font-main: Arial, sans-serif;
+}

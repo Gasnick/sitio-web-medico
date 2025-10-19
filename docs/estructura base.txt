@@ -1,0 +1,46 @@
+/proyecto-medico
+│
+├── /public               # Archivos estáticos (favicon, logo, imágenes generales)
+│   ├── favicon.ico
+│   ├── logo.png
+│   └── /images
+│       └── hero.jpg
+│
+├── /src                  # Código fuente principal
+│   ├── /assets           # CSS global, fuentes, variables de colores
+│   │   ├── css
+│   │   │   ├── reset.css
+│   │   │   ├── variables.css
+│   │   │   └── style.css
+│   │   └── fonts
+│   │
+│   ├── /components       # Bloques reutilizables de UI (header, footer, cards)
+│   │   ├── header.html
+│   │   ├── footer.html
+│   │   └── card-servicio.html
+│   │
+│   ├── /data             # JSON o JS con datos (ej: especialidades, médicos)
+│   │   ├── especialidades.json
+│   │   ├── medicos.json
+│   │   └── contacto.json
+│   │
+│   ├── /js               # Scripts
+│   │   ├── main.js
+│   │   ├── menu.js       # ejemplo: hamburguesa responsive
+│   │   └── turnos.js     # lógica futura para formulario o API
+│   │
+│   └── /pages            # Páginas principales del sitio
+│       ├── index.html
+│       ├── especialidades.html
+│       ├── profesionales.html
+│       ├── turnos.html
+│       └── contacto.html
+│
+├── /tests                # Tests unitarios (cuando incorporemos frameworks/backend)
+│
+├── /docs                 # Documentación (PDF, wireframes exportados, notas técnicas)
+│
+├── .gitignore            # Ignorar node_modules, dist, etc.
+├── package.json          # (cuando sumemos npm/yarn para dependencias)
+├── README.md             # Descripción del proyecto
+└── vite.config.js        # (cuando usemos Vite o similar)

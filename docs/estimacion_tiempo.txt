@@ -1,0 +1,20 @@
+⏱️ Estimación de tiempo – MVP
+📌 Alcance del MVP:
+
+Inicio con presentación e imagen institucional.
+Especialidades con listado de servicios.
+Profesionales (nombre, especialidad, horarios).
+Turnos con formulario simple o botón a WhatsApp.
+Ubicación y contacto con mapa y teléfono.
+Diseño responsive (funcione en móvil y PC).
+Hosting en Vercel/Firebase con dominio de prueba.
+
+📆 Plan tentativo (para hacerlo solo, de manera individual):
+
+Diseño y wireframes: 1 a 2 días.
+Estructura HTML + CSS base: 2 a 3 días.
+Interactividad (JavaScript, botones de contacto, WhatsApp, etc.): 1 a 2 días.
+Ajustes responsive + pruebas en distintos dispositivos: 1 a 2 días.
+Deploy en Vercel/Firebase: 1 día.
+
+🔹 Total: 7 a 10 días de trabajo (unas 25 a 35 horas efectivas).
