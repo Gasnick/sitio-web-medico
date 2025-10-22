@@ -4,7 +4,7 @@
 Inicio con presentación e imagen institucional.
 Especialidades con listado de servicios.
 Profesionales (nombre, especialidad, horarios).
-Turnos con formulario simple o botón a WhatsApp.
+Turnos con formulario simple y botón a WhatsApp.
 Ubicación y contacto con mapa y teléfono.
 Diseño responsive (funcione en móvil y PC).
 Hosting en Vercel/Firebase con dominio de prueba.
