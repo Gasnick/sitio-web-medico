@@ -1,10 +1,3 @@
-/**
-* Template Name: MediNest
-* Template URL: https://bootstrapmade.com/medinest-bootstrap-hospital-template/
-* Updated: Aug 11 2025 with Bootstrap v5.3.7
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
 (function() {
   "use strict";
