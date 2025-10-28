@@ -35,6 +35,10 @@
     <!-- Main CSS File -->
     <link href="../assets/css/main.css" rel="stylesheet">
 
+    <!-- Flatpickr CSS (calendario) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+
 </head>
 
 <body class="index-page">
@@ -47,7 +51,7 @@
 
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="../../index.html#hero">Index</a></li>
+                    <li><a href="../../index.html#hero">Inicio</a></li>
                     <li><a href="../../index.html#quienes-somos">¿Quiénes somos?</a></li>
                     <li><a href="../../index.html#especialidades">Especialidades</a></li>
                     <li><a href="../../index.html#servicios">Servicios</a></li>
@@ -64,54 +68,125 @@
     </header>
 
     <main class="main pt-5">
-
-        <!-- Turnos Section (MVP) -->
+        <!-- Turnos Section (MVP simplificado) -->
         <section id="turnos" class="section py-5">
             <div class="container" data-aos="fade-up">
-                <h2 class="section-heading">Pedir turno</h2>
+                <h2 class="section-heading text-center mb-4">Solicitar Turno</h2>
 
-                <form id="form-turnos" class="row g-3 needs-validation" novalidate>
-                    <div class="col-md-6">
-                        <label class="form-label">Nombre completo</label>
-                        <input name="patientName" class="form-control" required />
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label">Teléfono</label>
-                        <input name="patientPhone" class="form-control" required />
-                    </div>
-
-                    <div class="col-md-4">
-                        <label class="form-label">Especialidad</label>
-                        <select name="specialty" class="form-select"></select>
+                <form id="form-turnos" class="row g-3 needs-validation justify-content-center" novalidate>
+                    <!-- Nombre -->
+                    <div class="col-md-5">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" name="nombre" id="nombre" class="form-control" required
+                            pattern="^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]{2,}$" placeholder="Ej. Juan" />
+                        <div class="invalid-feedback">Ingrese un nombre válido.</div>
                     </div>
 
-                    <div class="col-md-4">
-                        <label class="form-label">Médico</label>
-                        <select name="doctorId" class="form-select"></select>
+                    <!-- Apellido -->
+                    <div class="col-md-5">
+                        <label for="apellido" class="form-label">Apellido</label>
+                        <input type="text" name="apellido" id="apellido" class="form-control" required
+                            pattern="^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]{2,}$" placeholder="Ej. Pérez" />
+                        <div class="invalid-feedback">Ingrese un apellido válido.</div>
                     </div>
 
-                    <div class="col-md-2">
-                        <label class="form-label">Fecha</label>
-                        <input name="date" type="date" class="form-control" />
+                    <!-- Teléfono -->
+                    <div class="col-md-5">
+                        <label for="telefono" class="form-label">Teléfono</label>
+                        <input type="tel" name="telefono" id="telefono" class="form-control" required
+                            pattern="^[0-9+\-\s]{7,15}$" placeholder="Ej. 3804-123456" />
+                        <div class="invalid-feedback">Ingrese un teléfono válido.</div>
                     </div>
 
-                    <div class="col-md-2">
-                        <label class="form-label">Hora</label>
-                        <input name="time" type="time" class="form-control" />
+                    <!-- Correo electrónico -->
+                    <div class="col-md-5">
+                        <label for="email" class="form-label">Correo electrónico</label>
+                        <input type="email" name="email" id="email" class="form-control" required
+                            placeholder="Ej. correo@dominio.com" />
+                        <div class="invalid-feedback">Ingrese un correo válido.</div>
                     </div>
 
-                    <div class="col-12">
-                        <div id="slots-container" class="mb-2"></div>
-                    </div>
+                    <!-- Opción: Especialidad o Profesional -->
+                    <section class="py-5 bg-light" id="buscar-profesional">
+                        <div class="container">
+                            <h2 class="text-center mb-4">Buscar un Profesional</h2>
+                            <p class="text-center mb-5">Seleccioná una especialidad y el profesional que desees
+                                consultar.</p>
 
-                    <div class="col-12">
-                        <button class="btn btn-primary" type="submit">Reservar turno</button>
+                            <div class="row justify-content-center">
+                                <div class="col-md-6">
+                                    <form id="buscarForm" class="p-4 border rounded bg-white shadow-sm">
+                                        <div class="mb-3">
+                                            <label for="especialidad" class="form-label">Especialidad</label>
+                                            <select id="especialidad" class="form-select">
+                                                <option value="">Seleccioná una especialidad...</option>
+                                                <option value="cardiologia">Cardiología</option>
+                                                <option value="pediatria">Pediatría</option>
+                                                <option value="dermatologia">Dermatología</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="profesional" class="form-label">Profesional</label>
+                                            <select id="profesional" class="form-select">
+                                                <option value="">Seleccioná un profesional...</option>
+                                                <option value="perez">Dr. Juan Pérez</option>
+                                                <option value="gomez">Dra. Ana Gómez</option>
+                                                <option value="torres">Dr. Luis Torres</option>
+                                            </select>
+                                        </div>
+
+                                        <button type="button" id="btnBuscar" class="btn btn-primary w-100">
+                                            Ver disponibilidad
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Calendario -->
+                            <div id="calendarioContainer" class="text-center mt-5 d-none">
+                                <h4 class="mb-3">Calendario de turnos disponibles</h4>
+                                <input type="text" id="calendario" class="form-control mx-auto"
+                                    style="max-width: 300px;">
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- JS -->
+                    <script>
+                        const btnBuscar = document.getElementById('btnBuscar');
+                        const calendarioContainer = document.getElementById('calendarioContainer');
+                        const calendarioInput = document.getElementById('calendario');
+
+                        btnBuscar.addEventListener('click', () => {
+                            calendarioContainer.classList.remove('d-none');
+                            calendarioContainer.scrollIntoView({ behavior: 'smooth' });
+
+                            // Inicializar el calendario si no lo estaba
+                            if (!calendarioInput.classList.contains('flatpickr-input')) {
+                                flatpickr(calendarioInput, {
+                                    dateFormat: "d/m/Y",
+                                    minDate: "today",
+                                    locale: "es",
+                                    inline: true, // muestra el calendario directamente
+                                });
+                            }
+                        });
+                    </script>
+
+
+
+                    <!-- Botón -->
+                    <div class="col-12 text-center">
+                        <button class="btn btn-primary px-5 mt-3" type="submit">
+                            Reservar turno
+                        </button>
                     </div>
                 </form>
             </div>
         </section>
-
     </main>
+
 
     <footer id="footer" class="footer position-relative">
 
@@ -136,9 +211,8 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 footer-links">
-                    <h4>Links más frecuentes</h4>
+                    <h4>Links de interés</h4>
                     <ul>
-                        <li><a href="#">Index</a></li>
                         <li><a href="#">Quiénes somos</a></li>
                         <li><a href="#">Servicios</a></li>
                         <li><a href="#">Especialidades</a></li>
@@ -208,6 +282,10 @@
 
     <!-- script principal -->
     <script src="../js/main.js"></script>
+
+    <!-- Flatpickr JS (calendario) -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
 
 </body>
 
