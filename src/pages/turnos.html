@@ -60,7 +60,7 @@
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
-            <a href="https://wa.me/5493804123456" class="btn-wsp" target="_blank" aria-label="Chat por WhatsApp">
+            <a href="https://wa.me" class="btn-wsp" target="_blank" aria-label="Chat por WhatsApp">
                 <i class="bi bi-whatsapp"></i>
             </a>
             <a class="btn-getstarted" href="turnos.html">Turnos</a>
@@ -69,45 +69,49 @@
 
     <main class="main pt-5">
         <!-- Turnos Section (MVP simplificado) -->
-        <section id="turnos" class="section py-5">
+        <section id="turnos" class="contact section">
             <div class="container" data-aos="fade-up">
                 <h2 class="section-heading text-center mb-4">Solicitar Turno</h2>
 
-                <form id="form-turnos" class="row g-3 needs-validation justify-content-center" novalidate>
-                    <!-- Nombre -->
-                    <div class="col-md-5">
-                        <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" name="nombre" id="nombre" class="form-control" required
-                            pattern="^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]{2,}$" placeholder="Ej. Juan" />
-                        <div class="invalid-feedback">Ingrese un nombre válido.</div>
-                    </div>
+                <div class="col-lg-12">
+                    <form id="form-turnos" class="php-email-form" novalidate>
+                        <div class="row gy-3">
+                            <!-- Nombre -->
+                            <div class="col-md-6">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input type="text" name="nombre" id="nombre" class="form-control" required
+                                    pattern="^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]{2,}$" placeholder="Ej. Juan" />
+                                <div class="invalid-feedback">Ingrese un nombre válido.</div>
+                            </div>
 
-                    <!-- Apellido -->
-                    <div class="col-md-5">
-                        <label for="apellido" class="form-label">Apellido</label>
-                        <input type="text" name="apellido" id="apellido" class="form-control" required
-                            pattern="^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]{2,}$" placeholder="Ej. Pérez" />
-                        <div class="invalid-feedback">Ingrese un apellido válido.</div>
-                    </div>
+                            <!-- Apellido -->
+                            <div class="col-md-6">
+                                <label for="apellido" class="form-label">Apellido</label>
+                                <input type="text" name="apellido" id="apellido" class="form-control" required
+                                    pattern="^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]{2,}$" placeholder="Ej. Pérez" />
+                                <div class="invalid-feedback">Ingrese un apellido válido.</div>
+                            </div>
 
-                    <!-- Teléfono -->
-                    <div class="col-md-5">
-                        <label for="telefono" class="form-label">Teléfono</label>
-                        <input type="tel" name="telefono" id="telefono" class="form-control" required
-                            pattern="^[0-9+\-\s]{7,15}$" placeholder="Ej. 3804-123456" />
-                        <div class="invalid-feedback">Ingrese un teléfono válido.</div>
-                    </div>
+                            <!-- Teléfono -->
+                            <div class="col-md-6">
+                                <label for="telefono" class="form-label">Teléfono</label>
+                                <input type="tel" name="telefono" id="telefono" class="form-control" required
+                                    pattern="^[0-9+\-\s]{7,15}$" placeholder="Ej. 3804-123456" />
+                                <div class="invalid-feedback">Ingrese un teléfono válido.</div>
+                            </div>
 
-                    <!-- Correo electrónico -->
-                    <div class="col-md-5">
-                        <label for="email" class="form-label">Correo electrónico</label>
-                        <input type="email" name="email" id="email" class="form-control" required
-                            placeholder="Ej. correo@dominio.com" />
-                        <div class="invalid-feedback">Ingrese un correo válido.</div>
-                    </div>
+                            <!-- Correo electrónico -->
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Correo electrónico</label>
+                                <input type="email" name="email" id="email" class="form-control" required
+                                    placeholder="Ej. correo@dominio.com" />
+                                <div class="invalid-feedback">Ingrese un correo válido.</div>
+                            </div>
+                        </div>
 
+                    </form>
                     <!-- Opción: Especialidad o Profesional -->
-                    <section class="py-5 bg-light" id="buscar-profesional">
+                    <section class="php-email-form" id="buscar-profesional">
                         <div class="container">
                             <h2 class="text-center mb-4">Buscar un Profesional</h2>
                             <p class="text-center mb-5">Seleccioná una especialidad y el profesional que desees
@@ -136,7 +140,7 @@
                                             </select>
                                         </div>
 
-                                        <button type="button" id="btnBuscar" class="btn btn-primary w-100">
+                                        <button type="button" id="btnBuscar" class="btn btn-secondary w-100">
                                             Ver disponibilidad
                                         </button>
                                     </form>
@@ -149,6 +153,12 @@
                                 <input type="text" id="calendario" class="form-control mx-auto"
                                     style="max-width: 300px;">
                             </div>
+                        </div>
+                        <!-- Botón -->
+                        <div class="col-12 mt-4 text-center">
+                            <button type="submit">
+                                Reservar turno
+                            </button>
                         </div>
                     </section>
 
@@ -176,14 +186,10 @@
 
 
 
-                    <!-- Botón -->
-                    <div class="col-12 text-center">
-                        <button class="btn btn-primary px-5 mt-3" type="submit">
-                            Reservar turno
-                        </button>
-                    </div>
-                </form>
-            </div>
+
+
+
+                </div>
         </section>
     </main>
 
