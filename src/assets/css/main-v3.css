@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 @font-face {
   font-family: "Trajan Pro";
   src: url("../fonts/TrajanPro-Bold.otf") format("opentype");
@@ -16,6 +14,7 @@
   font-display: swap;
 }
 
+@charset "UTF-8";
 
 /*--------------------------------------------------------------
 # Font & Color Variables
@@ -6447,69 +6446,4 @@ section,
   padding-top: 60px;
   padding-bottom: 60px;
   /* Add your styles here */
-}
-
-/* ══════════════════════════════════════════════════════
-   FIX MOBILE — Navbar compacta + imagen hero proporcionada
-══════════════════════════════════════════════════════ */
-
-@media (max-width: 768px) {
-
-  /* Navbar: siempre sólida y compacta */
-  .header {
-    --background-color: #ffffff !important;
-    background-color: #ffffff !important;
-    padding: 8px 0 !important;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  }
-
-  /* Logo: tamaño reducido para navbar compacta */
-  .header .logo img {
-    max-height: 75px !important;
-  }
-
-  /* Hero: empieza justo debajo del navbar (~54px con logo 38px + padding 8x2) */
-  .hero {
-    padding-top: 0 !important;
-    margin-top: 150px !important;
-    min-height: auto;
-    padding-bottom: 30px;
-  }
-
-  /* Imagen hero: altura controlada, centrada en la parte superior */
-  .hero .hero-image {
-    margin-bottom: 1.2rem;
-  }
-
-  .hero .hero-image .main-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    object-position: center 20%;
-    border-radius: 12px;
-  }
-
-  /* Floating cards: estáticas, sin superposición */
-  .hero .hero-image .floating-card {
-    position: static !important;
-    transform: none !important;
-    margin: 0.6rem 0;
-    width: 100%;
-  }
-
-  .hero .hero-image .floating-card.stats-card {
-    display: flex;
-    justify-content: space-around;
-    padding: 0.8rem 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    margin-top: 54px !important;
-  }
-
-  .hero .hero-image .main-image {
-    height: 180px;
-  }
 }
