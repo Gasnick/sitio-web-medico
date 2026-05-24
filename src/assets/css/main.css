@@ -30,13 +30,13 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root {
-  --background-color: #ffffff;
+  --background-color: #FAFAF8;
   /* Background color for the entire website, including individual sections */
   --default-color: #363f40;
   /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #1f2f31;
+  --heading-color: #1C3D5A;
   /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #099aa7;
+  --accent-color: #6E8B7A;
   /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff;
   /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
@@ -46,9 +46,9 @@
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #363f40;
+  --nav-color: #374151;
   /* The default color of the main navmenu links */
-  --nav-hover-color: #099aa7;
+  --nav-hover-color: #6E8B7A;
   /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff;
   /* Used as the background color for mobile navigation menu */
@@ -56,7 +56,7 @@
   /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #363f40;
   /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #099aa7;
+  --nav-dropdown-hover-color: #6E8B7A;
   /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
@@ -254,7 +254,7 @@ h6 {
 /* Global Header on Scroll
 ------------------------------*/
 .scrolled .header {
-  --background-color: #ffffff;
+  --background-color: #FAFAF8;
 }
 
 /*--------------------------------------------------------------
@@ -6512,4 +6512,56 @@ section,
   .hero .hero-image .main-image {
     height: 180px;
   }
+}
+
+/* ══════════════════════════════════════════════
+   PALETA DEFINITIVA — Footer Navy (Paleta 2)
+══════════════════════════════════════════════ */
+.footer {
+  background-color: #1C3D5A !important;
+  color: #c8d8c8 !important;
+  border-top: none !important;
+}
+.footer .footer-top {
+  border-top: 1px solid rgba(255,255,255,0.08) !important;
+}
+.footer h4 {
+  color: #ffffff !important;
+}
+.footer p,
+.footer .footer-contact p {
+  color: #c8d8c8 !important;
+}
+.footer .footer-links ul a,
+.footer .footer-about p a {
+  color: #a8c4b0 !important;
+}
+.footer .footer-links ul a:hover,
+.footer .footer-about p a:hover {
+  color: #ffffff !important;
+}
+.footer .footer-links ul i {
+  color: #a8c4b0 !important;
+}
+.footer .copyright {
+  border-top: 1px solid rgba(255,255,255,0.08) !important;
+}
+.footer .copyright p,
+.footer .credits {
+  color: #7a9a85 !important;
+}
+.footer .credits a {
+  color: #a8c4b0 !important;
+}
+.footer .social-links a {
+  background: rgba(255,255,255,0.08);
+  color: #ffffff !important;
+  border-color: rgba(255,255,255,0.08) !important;
+}
+.footer .social-links a:hover {
+  background: rgba(255,255,255,0.18);
+}
+.footer .sitename,
+.footer .logo span {
+  color: #ffffff !important;
 }
