@@ -6565,20 +6565,3 @@ section,
 .footer .logo span {
   color: #ffffff !important;
 }
-
-.fachada-wrapper {
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 25px 80px color-mix(in srgb, var(--default-color), transparent 88%);
-  background: transparent;
-}
-
-.fachada-img {
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-
-
